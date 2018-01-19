@@ -58,7 +58,8 @@ Route::get('/', function () {
    
    Route::get('/account', [
         'uses' => 'UserController@getAccount',
-        'as' => 'account'
+        'as' => 'account',
+       'middleware' => 'auth'
    ]);
    
    
