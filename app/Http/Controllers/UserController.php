@@ -23,6 +23,8 @@ class UserController extends Controller
        $name = $request['name']; 
        $lastName = $request['last_name'];
        $password = bcrypt($request['password']);
+       $isDriver = false;
+       if(isset($request['isDriver'])) $isDriver = true;
        
        $user = new User();
        
@@ -30,6 +32,7 @@ class UserController extends Controller
        $user->name = $name;
        $user->lastName = $lastName;
        $user->password = $password;
+       $user->isDriver = $isDriver;
        
        $user->save();
        

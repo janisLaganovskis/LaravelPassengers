@@ -18,6 +18,12 @@ Route::get('/', function () {
 })->name('login');
 
 
+Route::prefix('admin')->group(function() {
+    Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+  });
+
    Route::post('/signup', [
       'uses' => 'UserController@postSignUp',
        'as' => 'signup'
@@ -55,6 +61,10 @@ Route::get('/', function () {
       'uses' => 'PostController@postEditPost',
        'as' => 'edit'
    ]);   
+    Route::post('/signupPost',[
+      'uses' => 'PostController@postSignup',
+       'as' => 'signupPost'
+   ]); 
    
    Route::get('/account', [
         'uses' => 'UserController@getAccount',

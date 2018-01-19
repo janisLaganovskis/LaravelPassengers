@@ -11,6 +11,9 @@ class User extends Model implements Authenticatable
     public function posts(){
         return $this->hasMany('App\Post');
     }
+       public function signups(){
+        return $this->hasMany('App\Signup');
+    }
         protected $fillable = [
         'name', 'email', 'password',
     ];

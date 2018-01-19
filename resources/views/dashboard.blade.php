@@ -2,22 +2,24 @@
 
 @section('content')
     @include('includes.returnmessageblock')
-    <section class="row new-post">
-        <div class="col-md-6 col-md-offset-3">
-            <header><h3> Whats on your mind?</h3></header>
-                <form action="{{ route('post.create') }}" method="post">
-                <div class="form-group">
-                    <textarea class="form-control" name="body" id="new-post" rows="5" placeholder="Your Post"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Create Post</button>
-                <input type="hidden" name="_token" value="{{ Session::token()}}"> </input>
-            </form>
-        
-        </div>
-    </section>
+    @if(Auth::user()->isDriver)
+        <section class="row new-post">
+            <div class="col-md-6 col-md-offset-3">
+                <header><h3> Specify where you are driving and for how much?</h3></header>
+                    <form action="{{ route('post.create') }}" method="post">
+                    <div class="form-group">
+                        <textarea class="form-control" name="body" id="new-post" rows="5" placeholder="Your Post"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Post</button>
+                    <input type="hidden" name="_token" value="{{ Session::token()}}"> </input>
+                </form>        
+            </div>
+        </section>             
+    @endif
+    
  <section class="row posts">
         <div class="col-md-6 col-md-offset-3">
-            <header><h3> What people are thinking</h3></header>
+            <header><h3> All routes</h3></header>
            @foreach($posts as $post)
                 <article class="post" data-postid="{{ $post->id }}">
                     <p>
@@ -27,8 +29,9 @@
                        Posted by {{ $post->user->name }} {{ $post->user->lastName }} on {{ $post->created_at }}
                     </div>
                     <div class="interaction">
-                        <a href="#">Like</a>
-                        |<a href="#">Dislike</a>
+                        @if(!(Auth::user()->isDriver))
+                        <a href="#" class="signupPost">Sign up</a>   
+                        @endif
                         @if(Auth::user() == $post->user)
                         |<a href="#" class="edit">Edit</a>
                             |<a href=" {{ route('post.delete', ['post_id' => $post->id]) }} ">Delete</a>
@@ -66,7 +69,8 @@
     
     <script>
         var token = '{{ Session::token() }}';
-        var url = '{{ route('edit')}}'
+        var urlEdit = '{{ route('edit')}}';
+        var urlSignup = '{{ route('signupPost')}}';
     </script>
 
 @endsection

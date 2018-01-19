@@ -30,6 +30,10 @@
                     <label for="password_confirmation">Repeat password</label>
                     <input class="form-control" type="password" name="password_confirmation" id="password_confirmation">
                 </div>
+                <div >
+                    <label for="isDriver">Are you a driver?</label>
+                    <input class="form-control" type="checkbox" name="isDriver" id="isDriver">
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <input type="hidden" name="_token" value="{{ Session::token()}}"> </input>
             </form>
