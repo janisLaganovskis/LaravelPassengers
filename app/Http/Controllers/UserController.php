@@ -72,10 +72,14 @@ class UserController extends Controller
         ]);
 
         $user = Auth::user();
+        $fromadmin = false;
+        if(!$user){ $user =  User::where('id',  $request['userId'])->first(); $fromadmin = true;}
         
         $old_name = $user->name;
+        $old_lastname = $user->lastName;
         
         $user->name = $request['name'];
+        $user->lastName = $request['lastName'];
         $user->update();
         
         $file = $request->file('profile_picture');
@@ -98,7 +102,11 @@ class UserController extends Controller
         if ($update && $old_filename !== $filename) {
             Storage::delete($old_filename);
         }
+        if(!$fromadmin){
         return redirect()->route('account');
+        } else{
+          return redirect()->route('admin.dashboard');  
+        }
     }
     
     public function getUserProfilePicture($filename)

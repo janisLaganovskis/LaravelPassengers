@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        //$this->middleware('auth:admin');
     }
 
     /**
@@ -23,6 +24,21 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        $users = User::all();
+        
+        return view('admin', ['users'=> $users]);
     }
+    
+     public function getDeleteUser($user_id){
+         $user = User::where('id', $user_id)->first();         
+         
+         $user->delete();
+        return redirect()->route('admin')->with(['message' => 'Succesfully deleted']);        
+    }
+    
+    public function getEditUser($user_id){
+        $user = User::where('id', $user_id)->first();
+        return view('account', ['user' => $user]);        
+    }
+    
 }
