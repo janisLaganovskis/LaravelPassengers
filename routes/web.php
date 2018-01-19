@@ -74,3 +74,8 @@ Route::get('/', function () {
 
     Route::get('/redirect', 'SocialAuthFacebookController@redirect');
     Route::get('/callback', 'SocialAuthFacebookController@callback');
+    
+    Route::get('/setlocale/{locale}', function ($locale) {     
+        Session::put('locale', $locale);
+        return redirect()->back();  
+})->name('setlocale');
