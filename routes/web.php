@@ -101,3 +101,4 @@ Route::prefix('admin')->group(function() {
         Session::put('locale', $locale);
         return redirect()->back();  
 })->name('setlocale');
+Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
