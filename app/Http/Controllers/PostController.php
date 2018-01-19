@@ -57,4 +57,26 @@ class PostController extends Controller
           
         return response()->json(['new_body' => $post->body], 200);        
     }
+    
+      public function postSignup(Request $request)
+    {
+        $post_id = $request['postId'];
+        
+        $post = Post::find($post_id);
+        if (!$post) { return null;}
+        $user = Auth::user();
+        $signup = $user->signups()->where('post_id', $post_id)->first();
+        if ($signup) { 
+            $signup->delete();
+            return null;         
+        } 
+        else {
+            $signup = new Signup();
+        }
+        $signup->user_id = $user->id;
+        $signup->post_id = $post->id;
+       
+        $signup->save();        
+        return null;
+    }
 }

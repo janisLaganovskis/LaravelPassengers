@@ -8,7 +8,7 @@
 @section('content')
         <section class="row new-post">
         <div class="col-md-6 col-md-offset-3">
-            <header><h4>Your Account</h4></header>
+            <header><h4>Account</h4></header>
             <form action="{{ route('account.update') }}" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
@@ -28,6 +28,7 @@
 
                 <button type="submit" class="btn btn-primary">Update account</button>
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
+                <input type="hidden" value="{{ $user->id }}" name="userId">
             </form>
         </div>
     </section>

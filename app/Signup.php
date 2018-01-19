@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Signup extends Model
 {
     public function user(){
         return $this->belongsTo('App\User');
     }
-     public function signups(){
-        return $this->hasMany('App\Signup');
+    public function post(){
+        return $this->belongsTo('App\Post');
     }
 }

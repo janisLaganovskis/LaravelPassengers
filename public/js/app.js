@@ -20,10 +20,26 @@
  $('#modal-save').on('click', function(){
     $.ajax({
         method: 'POST',
-        url: url,
+        url: urlEdit,
         data: {body: $('#post-body').val(), postId: postId, _token: token}
     }).done(function (msg){
         $(postBody).text(msg['new_body']);
         $('#edit-modal').modal('hide');
     });  
  });
+ 
+ $('.signupPost').on('click', function(event) {
+     console.log('smth');
+    event.preventDefault();
+    postId = event.target.parentNode.parentNode.dataset['postid'];
+    $.ajax({
+        method: 'POST',
+        url: urlSignup,
+        data: {postId: postId, _token: token}
+    })
+        .done(function() {
+            event.target.innerText = 'You have signed up';
+           
+        });
+
+});
