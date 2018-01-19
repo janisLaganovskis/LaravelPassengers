@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 })->name('login');
@@ -70,3 +72,5 @@ Route::get('/', function () {
     'as' => 'account.profile_picture'
 ]);
 
+    Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+    Route::get('/callback', 'SocialAuthFacebookController@callback');
