@@ -32,6 +32,7 @@
      console.log('smth');
     event.preventDefault();
     postId = event.target.parentNode.parentNode.dataset['postid'];
+     console.log('smth1');
     $.ajax({
         method: 'POST',
         url: urlSignup,

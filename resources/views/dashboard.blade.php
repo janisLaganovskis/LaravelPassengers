@@ -5,6 +5,12 @@
     @if(Auth::user()->isDriver)
         <section class="row new-post">
             <div class="col-md-6 col-md-offset-3">
+                <header><h3> who has signed up for my posts?</h3></header>
+                    <form action="{{ route('postSgnups') }}" method="get">
+                    <button type="submit" class="btn btn-primary">Post singups</button>
+                </form>        
+            </div>
+            <div class="col-md-6 col-md-offset-3">
                 <header><h3> Specify where you are driving and for how much?</h3></header>
                     <form action="{{ route('post.create') }}" method="post">
                     <div class="form-group">
@@ -12,6 +18,18 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Create Post</button>
                     <input type="hidden" name="_token" value="{{ Session::token()}}"> </input>
+                </form>        
+            </div>
+        </section>             
+    @endif
+     @if(!Auth::user()->isDriver)
+        <section class="row new-post">
+            <div class="col-md-6 col-md-offset-3">
+              
+                    <form action="{{ route('my-signups') }}" method="get">
+                    
+                    <button type="submit" class="btn btn-primary">My Signups</button>
+                   
                 </form>        
             </div>
         </section>             

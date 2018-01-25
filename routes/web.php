@@ -64,6 +64,18 @@ Route::prefix('admin')->group(function() {
        'as' => 'post.create',
        'middleware' => 'auth'
    ]);
+          Route::get('/mySignups', [
+      'uses' => 'UserController@getSignups',
+       'as' => 'my-signups',
+       'middleware' => 'auth'
+   ]);
+          
+     Route::get('/postSignups', [
+      'uses' => 'UserController@getPostSignups',
+       'as' => 'postSgnups',
+       'middleware' => 'auth'
+   ]);
+      
       
        Route::get('/delete-post/{post_id}', [
       'uses' => 'PostController@getDeletePost',

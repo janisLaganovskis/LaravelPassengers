@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\Post;
+use App\Signup;
 
 class UserController extends Controller
 {
@@ -56,6 +58,25 @@ class UserController extends Controller
     public function getAccount()
     {
         return view('account', ['user' => Auth::user()]);
+    }
+       public function getSignups()
+    {
+             $this->middleware('auth');
+        $user =  Auth::user();
+        $signups = Signup::where('user_id', '=', $user->id)->get();        
+        
+        return view('signups', ['signups'=> $signups]);
+    }
+       public function getPostSignups()
+    {
+             $this->middleware('auth');
+        $user =  Auth::user();
+        $signups =  Signup::join('posts', 'post_id', '=', 'posts.id')
+                ->join('users', 'users.id', '=', 'posts.user_id')
+                ->where('users.id', '=', $user->id)
+                ->get(); 
+        
+        return view('psotsignups', ['signups'=> $signups]);
     }
     
     public function getLogout()
