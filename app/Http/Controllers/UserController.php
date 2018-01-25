@@ -74,8 +74,7 @@ class UserController extends Controller
         $signups =  Signup::join('posts', 'post_id', '=', 'posts.id')
                 ->join('users', 'users.id', '=', 'posts.user_id')
                 ->where('users.id', '=', $user->id)
-                ->get(); 
-        
+                ->get();         
         return view('psotsignups', ['signups'=> $signups]);
     }
     

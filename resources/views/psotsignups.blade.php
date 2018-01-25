@@ -25,7 +25,7 @@
                        {{ $signup->post->body }} 
                     </p> 
                     <div class="info">
-                       Pieteicies: {{ $signup->user->name }} {{ $signup->user->lastName }}, User ID {{ $signup->user->id }}
+                       Signep up: {{ $signup->user->name }} {{ $signup->user->lastName }}, User ID {{ $signup->user_id }}
                     </div>
                                
                 </article>
