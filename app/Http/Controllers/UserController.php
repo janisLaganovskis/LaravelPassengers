@@ -105,7 +105,7 @@ class UserController extends Controller
         if(!$fromadmin){
         return redirect()->route('account');
         } else{
-          return redirect()->route('admin.dashboard');  
+          return redirect()->route('admin.loggedin');  
         }
     }
     

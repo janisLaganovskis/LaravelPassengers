@@ -23,6 +23,10 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
   });
+  Route::get('/admin/dashboard', [
+      'uses' => 'AdminController@getDashboard',
+      'middleware' => 'auth:admin'
+  ])->name('admin.loggedin');
   
     Route::get('/delete-user/{user_id}', [
       'uses' => 'AdminController@getDeleteUser',
@@ -38,6 +42,10 @@ Route::prefix('admin')->group(function() {
    Route::post('/signup', [
       'uses' => 'UserController@postSignUp',
        'as' => 'signup'
+   ]);
+    Route::post('/signupAdmin', [
+      'uses' => 'AdminController@postSignUp',
+       'as' => 'signupAdmin'
    ]);
    
       Route::post('/signin', [

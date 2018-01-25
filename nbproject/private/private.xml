@@ -3,7 +3,41 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/paramm/Documents/NetBeansProjects/LaravelPassengers2/LaravelPassengers2/.env</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/lang/lv/passwords.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/views/admin.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Controllers/Controller.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/database/migrations/2018_01_19_041012_create_signups_table.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Controllers/UserController.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/lang/lv/pagination.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/database/migrations/2018_01_15_010737_create_posts_table.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/User.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/database/migrations/2018_01_19_015157_create_admins_table.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/views/layouts/master.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Controllers/AdminLoginController.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/views/includes/headers.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/views/includes/returnmessageblock.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Kernel.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/lang/lv/auth.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Post.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Controllers/PostController.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/lang/lv/validation.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Middleware/Locale.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/admins.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/config/auth.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/views/admin-login.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/public/css/app.css</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/database/migrations/2018_01_14_191340_create_users_table.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/config/languages.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/views/dashboard.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/.env</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/views/account.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Controllers/LanguageController.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/resources/views/welcome.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/public/js/app.js</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Middleware/language.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Http/Controllers/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/Test_Laravel/app/Signup.php</file>
         </group>
     </open-files>
 </project-private>
